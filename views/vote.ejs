@@ -1,0 +1,123 @@
+<% include header.ejs %>
+<div class="container">
+   <!--  <div class="row"> -->
+        <!-- <div class="col-md-6">
+                <div>
+                    Upload QR Code
+                    <input type="file" name="qrimage" id="qrimage" onchange="decodeQR();">
+                </div>
+                <button id="take_snapshots" class="btn btn-primary">Capture</button>
+                <div id="snapshots"></div>
+            </div> -->
+        <form method="post" action="/verifyvoter" enctype="multipart/form-data">
+            <div class="col-md-12">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4 text-center">Welcome to the Voting Phase</h1>
+                        <p id="cred_login" class="lead text-center">
+
+                            <small id="txtmsg">Login</small>
+                            <hr>
+                            <div class="lds-css ng-scope">
+                                <!-- ---------first part -->
+                                <!-- <div class="lds-spinner" style="width: 100%;height:100%; margin: 0 auto">
+                                     <div></div>
+                                     <div></div>
+                                     <div></div>
+                                     <div></div>
+                                     <div></div>
+                                     <div></div>
+                                     <div></div>
+                                     <div></div>
+                                     <div></div>
+                                     <div></div>
+                                     <div></div>
+                                     <div></div>
+                                 </div>-->
+                            </div>
+                            <div class="container" style="width: 40%;">
+
+                                <p class="lead">
+
+                                    <div class="form-group">
+                                        <label for="login_id">Login ID</label>
+                                        <input type="text" class="form-control" id="login_id" name="login_id">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password">
+                                    </div>
+                                    <hr>
+                                </p>
+                            </div>
+                        </p>
+                    </div>
+
+                    <div class="text-center" style="margin: 0 auto;">
+                        <!-- second part -->
+                        <!--<img src="" id="qr_img" style="margin: 0 auto; display:block;">-->
+                        <!-- third part -->
+                        <video autoplay id="camera" class="text-center" style="margin: 0 auto; display:none;width:50%;height:50%"></video>
+                        <!-- fourth part -->
+                        <canvas class="text-center" style="margin: 0 auto;" id='snapshots'></canvas>
+                        <!--test -->
+                        <!--<input id="myFileInput" type="file" accept="image/*;capture=camera">-->
+                        <br>
+                    </div>
+                </div>
+                <!-- ---------first part -->
+                <div type="button" class="file btn btn-success btn-lg btn-block" id="sub_button" style="position: relative;
+                            overflow: hidden;" onclick="javascript:submit_form(event);">
+                    <!-- <input type="file" name="file" id="qr_file" style="position: absolute;
+                                font-size: 50px;
+                                opacity: 0;
+                                right: 0;
+                                top: 0;" onchange="javascript:upload_qr(event);" accept="image/*" />Upload My QR Code -->
+                    <input type="button" style="position: absolute;font-size: 50px;opacity: 0;right: 0;top: 0;"
+                        onclick="javascript:submit_form(event);">Submit
+                </div>
+
+                <!-- <form method="post" action="/verifyvoter" enctype="multipart/form-data"> -->
+                <div style="display:none;">
+                    <input type="hidden" class="form-control" id="qrdata" name="qrdata" filename="name1">
+                    <!-- <input type="hidden" class="form-control" id="avatar" name="avatar" filename="name"> -->
+                </div>
+
+                <!-- ---------second part 
+                <div type="button" class="btn btn-primary btn-lg btn-block" id="submit_qr"
+                    onclick="javascript:submit_qr_func(event);"
+                    style="position: relative;overflow: hidden; display:none;">
+                    Submit My QR Code
+                </div>-->
+                <!-- third part -->
+                <div type="button" class="btn btn-danger btn-lg btn-block" id="capture_img"
+                    onclick="javascript:capture_img_func(event);" style="position: relative;
+                            overflow: hidden; display:none;">
+                    Capture
+                </div>
+                <!-- fourth part -->
+                <div type="button" class="btn btn-lg btn-block" id="verify_btn"
+                     style="position: relative;
+                            overflow: hidden; display:none;">
+                    Submit
+                </div>
+                <!--onclick="javascript:document.forms[0].submit();"-->
+
+                <!-- <div class="custom-control custom-radio">
+                                <input type="radio" id="rahul" name="candidate" value="Rahul Gandhi" class="custom-control-input">
+                                <label class="custom-control-label" for="rahul">Rahul Gandhi</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="modi" name="candidate" value="Narendra Modi" class="custom-control-input">
+                                <label class="custom-control-label" for="modi">Narendra Modi</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="arvind" name="candidate" value="Arvind Kejrival" class="custom-control-input">
+                                <label class="custom-control-label" for="arvind">Arvind Kejrival</label>
+                            </div> -->
+                
+                <!-- <button class="btn btn-primary" id="vote_btn" onclick="voteForCandidate()">Vote</button> -->
+            </div>
+        </form>
+   <!--  </div> -->
+</div>
